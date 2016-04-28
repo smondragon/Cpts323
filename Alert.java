@@ -1,5 +1,7 @@
 package groupProject;
 
+// Last updated 4/28/2016 - 12:03 a.m.
+
 public class Alert {
 
 	private static String type;
@@ -7,6 +9,7 @@ public class Alert {
 	private static String polygon;	
 	private static String effective;
 	private static String expires;
+	private static String description;
 	
 	public static String getType() {
 		return type;
@@ -38,7 +41,12 @@ public class Alert {
 	public static void setExpires(String expires) {
 		Alert.expires = expires;
 	}
-	
-	//String alert;
+	public static String getDescription() {
+		return description;
+	}
+	public static void setDescription(String description) {
+		Alert.description = description;
+	}
+
 	
 }

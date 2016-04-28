@@ -16,6 +16,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+// Last updated 4/26/2016ish
 
 public class ParseXMLFile
 { 
@@ -99,16 +100,12 @@ public class ParseXMLFile
                 Alert.setExpires(expiresElem.getChildNodes().item(0).getNodeValue());
                 
                 
+                NodeList descList = 
+                		e.getElementsByTagName("cap:description");
+                Element descElem = (Element) descList.item(0);
                 
-                
-                //TODO: Find out how the site titles alerts...
-                /*
-                NodeList alertList = 
-                		e.getElementsByTagName("alert");
-                Element alertElem = (Element) alertList.item(0);
-                
-                System.out.println(alertElem.getChildNodes().item(0).getNodeValue());
-                */
+                System.out.println(descElem.getChildNodes().item(0).getNodeValue());
+               
                 /*
                 // get and print the urgency
                 

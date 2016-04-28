@@ -1,11 +1,14 @@
 package groupProject;
 
+import gov.nasa.worldwindx.examples.ApplicationTemplate;
+import groupProject.Balloons.AppFrame;
+//import groupProject.Polygons.AppFrame;
+
 public class testing {
 
 	public static void main(String[] args) {
-		//ParseXMLFile 
-		ParseXMLFile theseAlerts = new ParseXMLFile();
 		
+		ApplicationTemplate.start("Test test test", AppFrame.class);
 	}
 
 }

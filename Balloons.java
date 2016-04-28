@@ -148,8 +148,8 @@ public class Balloons extends ApplicationTemplate
     public static void main(String[] args)
     {
         // Configure the initial view parameters so that the browser balloon is centered in the viewport.
-        Configuration.setValue(AVKey.INITIAL_LATITUDE, 60);
-        Configuration.setValue(AVKey.INITIAL_LONGITUDE, -85);
+        Configuration.setValue(AVKey.INITIAL_LATITUDE, 35);
+        Configuration.setValue(AVKey.INITIAL_LONGITUDE, -87);
         Configuration.setValue(AVKey.INITIAL_ALTITUDE, 9500000);
         Configuration.setValue(AVKey.INITIAL_PITCH, 45);
 
