@@ -3,325 +3,316 @@ package groupProject;
 import java.util.ArrayList;
 import java.util.List;
 
-// Last updated 4/28/2016, 12:03 a.m.
+// Last updated 4/29/2016, 2:29 a.m.
 
 public class ListOfURLs {
 
-	public String url;
-	public String error = "Not a U.S. state.";
+	boolean checkAlabama = false;
+	boolean checkAlaska = false;
+	boolean checkArizona = false;
+	boolean checkArkansas = false;
+	boolean checkCalifornia = false;
+	boolean checkColorado = false;
+	boolean checkConnecticut = false;
+	boolean checkDelaware = false;
+	boolean checkFlorida = false;
+	boolean checkGeorgia = false;
+	boolean checkHawaii = false;
+	boolean checkIdaho = false;
+	boolean checkIllinois = false;
+	boolean checkIndiana = false;
+	boolean checkIowa = false;
+	boolean checkKansas = false;
+	boolean checkKentucky = false;
+	boolean checkLouisiana = false;
+	boolean checkMaine = false;
+	boolean checkMaryland = false;
+	boolean checkMassachusetts = false;
+	boolean checkMichigan = false;
+	boolean checkMinnesota = false;
+	boolean checkMississippi = false;
+	boolean checkMissouri = false;
+	boolean checkMontana = false;
+	boolean checkNebraska = false;
+	boolean checkNevada = false;
+	boolean checkNewHampshire = false;
+	boolean checkNewJersey = false;
+	boolean checkNewMexico = false;
+	boolean checkNewYork = false;
+	boolean checkNorthCarolina = false;
+	boolean checkNorthDakota = false;
+	boolean checkOhio = false;
+	boolean checkOklahoma = false;
+	boolean checkOregon = false;
+	boolean checkPennsylvania = false;
+	boolean checkRhodeIsland = false;
+	boolean checkSouthCarolina = false;
+	boolean checkSouthDakota = false;
+	boolean checkTennessee = false;
+	boolean checkTexas = false;
+	boolean checkUtah = false;
+	boolean checkVermont = false;
+	boolean checkVirginia = false;
+	boolean checkWashington = false;
+	boolean checkWestVirginia = false;
+	boolean checkWisconsin = false;
+	boolean checkWyoming = false;
+			
+	final String alabama = "http://alerts.weather.gov/cap/al.php?x=1";
+	final String alaska = "http://alerts.weather.gov/cap/ak.php?x=1";
+	final String arizona = "http://alerts.weather.gov/cap/az.php?x=1";
+	final String arkansas = "http://alerts.weather.gov/cap/ar.php?x=1";
+	final String california = "http://alerts.weather.gov/cap/ca.php?x=1";
+	final String colorado = "http://alerts.weather.gov/cap/co.php?x=1";
+	final String connecticut = "http://alerts.weather.gov/cap/ct.php?x=1";
+	final String delaware = "http://alerts.weather.gov/cap/de.php?x=1";
+	final String florida = "http://alerts.weather.gov/cap/fl.php?x=1";
+	final String georgia = "http://alerts.weather.gov/cap/ga.php?x=1";
+	final String hawaii = "http://alerts.weather.gov/cap/hi.php?x=1";
+	final String idaho = "http://alerts.weather.gov/cap/id.php?x=1";
+	final String illinois = "http://alerts.weather.gov/cap/il.php?x=1";
+	final String indiana = "http://alerts.weather.gov/cap/in.php?x=1";
+	final String iowa = "http://alerts.weather.gov/cap/ia.php?x=1";
+	final String kansas = "http://alerts.weather.gov/cap/ks.php?x=1";
+	final String kentucky = "http://alerts.weather.gov/cap/ky.php?x=1";
+	final String louisiana = "http://alerts.weather.gov/cap/la.php?x=1";
+	final String maine = "http://alerts.weather.gov/cap/me.php?x=1";
+	final String maryland = "http://alerts.weather.gov/cap/md.php?x=1";
+	final String massachusetts = "http://alerts.weather.gov/cap/ma.php?x=1";
+	final String michigan = "http://alerts.weather.gov/cap/mi.php?x=1";
+	final String minnesota = "http://alerts.weather.gov/cap/mn.php?x=1";
+	final String mississippi = "http://alerts.weather.gov/cap/ms.php?x=1";
+	final String missouri = "http://alerts.weather.gov/cap/mo.php?x=1";
+	final String montana = "http://alerts.weather.gov/cap/mt.php?x=1";
+	final String nebraska = "http://alerts.weather.gov/cap/ne.php?x=1";
+	final String nevada = "http://alerts.weather.gov/cap/nv.php?x=1";
+	final String newHampshire = "http://alerts.weather.gov/cap/nh.php?x=1";
+	final String newJersey = "http://alerts.weather.gov/cap/nj.php?x=1";
+	final String newMexico = "http://alerts.weather.gov/cap/nm.php?x=1";
+	final String newYork = "http://alerts.weather.gov/cap/ny.php?x=1";
+	final String northCarolina = "http://alerts.weather.gov/cap/nc.php?x=1";
+	final String northDakota = "http://alerts.weather.gov/cap/nd.php?x=1";
+	final String ohio = "http://alerts.weather.gov/cap/oh.php?x=1";
+	final String oklahoma = "http://alerts.weather.gov/cap/ok.php?x=1";
+	final String oregon = "http://alerts.weather.gov/cap/or.php?x=1";
+	final String pennsylvania = "http://alerts.weather.gov/cap/pa.php?x=1";
+	final String rhodeIsland = "http://alerts.weather.gov/cap/ri.php?x=1";
+	final String southCarolina = "http://alerts.weather.gov/cap/sc.php?x=1";
+	final String southDakota = "http://alerts.weather.gov/cap/sd.php?x=1";
+	final String tennessee = "http://alerts.weather.gov/cap/tn.php?x=1";
+	final String texas = "http://alerts.weather.gov/cap/tx.php?x=1";
+	final String utah = "http://alerts.weather.gov/cap/ut.php?x=1";
+	final String vermont = "http://alerts.weather.gov/cap/vt.php?x=1";
+	final String virginia = "http://alerts.weather.gov/cap/va.php?x=1";
+	final String washington = "http://alerts.weather.gov/cap/wa.php?x=1";
+	final String westVirginia = "http://alerts.weather.gov/cap/wv.php?x=1";
+	final String wisconsin = "http://alerts.weather.gov/cap/wi.php?x=1";
+	final String wyoming = "http://alerts.weather.gov/cap/wy.php?x=1";
 	
-	public String getUrl() {
-		return url;
-	}
-
-	String urlList(String inputURL) {
+	List<String> urlList(){
+		List<String> urls = new ArrayList<String>(50);
+	
+		if(checkAlabama==true)
+		{
+			urls.add(alabama);
+		}
+		if(checkAlaska==true)
+		{
+			urls.add(alaska);
+		}
+		if(checkArizona==true)
+		{
+			urls.add(arizona);
+		}
+		if(checkArkansas==true)
+		{
+			urls.add(arkansas);
+		}
+		if(checkCalifornia==true)
+		{
+			urls.add(california);
+		}
+		if(checkColorado==true)
+		{
+			urls.add(colorado);
+		}
+		if(checkConnecticut==true)
+		{
+			urls.add(connecticut);
+		}
+		if(checkDelaware==true)
+		{
+			urls.add(delaware);
+		}
+		if(checkFlorida==true)
+		{
+			urls.add(florida);
+		}
+		if(checkGeorgia==true)
+		{
+			urls.add(georgia);
+		}
+		if(checkHawaii==true)
+		{
+			urls.add(hawaii);
+		}
+		if(checkIdaho==true)
+		{
+			urls.add(idaho);
+		}
+		if(checkIllinois==true)
+		{
+			urls.add(illinois);
+		}
+		if(checkIndiana==true)
+		{
+			urls.add(indiana);
+		}
+		if(checkIowa==true)
+		{
+			urls.add(iowa);
+		}
+		if(checkKansas==true)
+		{
+			urls.add(kansas);
+		}
+		if(checkKentucky==true)
+		{
+			urls.add(kentucky);
+		}
+		if(checkLouisiana==true)
+		{
+			urls.add(louisiana);
+		}
+		if(checkMaine==true)
+		{
+			urls.add(maine);
+		}
+		if(checkMaryland==true)
+		{
+			urls.add(maryland);
+		}
+		if(checkMassachusetts==true)
+		{
+			urls.add(massachusetts);
+		}
+		if(checkMichigan==true)
+		{
+			urls.add(michigan);
+		}
+		if(checkMinnesota==true)
+		{
+			urls.add(minnesota);
+		}
+		if(checkMississippi==true)
+		{
+			urls.add(mississippi);
+		}
+		if(checkMissouri==true)
+		{
+			urls.add(missouri);
+		}
+		if(checkMontana==true)
+		{
+			urls.add(montana);
+		}
+		if(checkNevada==true)
+		{
+			urls.add(nevada);
+		}
+		if(checkNebraska==true)
+		{
+			urls.add(nebraska);
+		}
+		if(checkNewHampshire==true)
+		{
+			urls.add(newHampshire);
+		}
+		if(checkNewJersey==true)
+		{
+			urls.add(newJersey);
+		}
+		if(checkNewMexico==true)
+		{
+			urls.add(newMexico);
+		}
+		if(checkNewYork==true)
+		{
+			urls.add(newYork);
+		}
+		if(checkNorthCarolina==true)
+		{
+			urls.add(northCarolina);
+		}
+		if(checkNorthDakota==true)
+		{
+			urls.add(northDakota);
+		}
+		if(checkOhio==true)
+		{
+			urls.add(ohio);
+		}
+		if(checkOklahoma==true)
+		{
+			urls.add(oklahoma);
+		}
+		if(checkOregon==true)
+		{
+			urls.add(oregon);
+		}
+		if(checkPennsylvania==true)
+		{
+			urls.add(pennsylvania);
+		}
+		if(checkRhodeIsland==true)
+		{
+			urls.add(rhodeIsland);
+		}
+		if(checkSouthCarolina==true)
+		{
+			urls.add(southCarolina);
+		}
+		if(checkSouthDakota==true)
+		{
+			urls.add(southDakota);
+		}
+		if(checkTennessee==true)
+		{
+			urls.add(tennessee);
+		}
+		if(checkTexas==true)
+		{
+			urls.add(texas);
+		}
+		if(checkUtah==true)
+		{
+			urls.add(utah);
+		}
+		if(checkVermont==true)
+		{
+			urls.add(vermont);
+		}
+		if(checkVirginia==true)
+		{
+			urls.add(virginia);
+		}
+		if(checkWashington==true)
+		{
+			urls.add(washington);
+		}
+		if(checkWestVirginia==true)
+		{
+			urls.add(westVirginia);	
+		}
+		if(checkWisconsin==true)
+		{
+			urls.add(wisconsin);
+		}
+		if(checkWyoming==true)
+		{
+			urls.add(wyoming);
+		}
 		
-		String alabama = "http://alerts.weather.gov/cap/al.php?x=1";
-		String alaska = "http://alerts.weather.gov/cap/ak.php?x=1";
-		String arizona = "http://alerts.weather.gov/cap/az.php?x=1";
-		String arkansas = "http://alerts.weather.gov/cap/ar.php?x=1";
-		String california = "http://alerts.weather.gov/cap/ca.php?x=1";
-		String colorado = "http://alerts.weather.gov/cap/co.php?x=1";
-		String connecticut = "http://alerts.weather.gov/cap/ct.php?x=1";
-		String delaware = "http://alerts.weather.gov/cap/de.php?x=1";
-		String florida = "http://alerts.weather.gov/cap/fl.php?x=1";
-		String georgia = "http://alerts.weather.gov/cap/ga.php?x=1";
-		String hawaii = "http://alerts.weather.gov/cap/hi.php?x=1";
-		String idaho = "http://alerts.weather.gov/cap/id.php?x=1";
-		String illinois = "http://alerts.weather.gov/cap/il.php?x=1";
-		String indiana = "http://alerts.weather.gov/cap/in.php?x=1";
-		String iowa = "http://alerts.weather.gov/cap/ia.php?x=1";
-		String kansas = "http://alerts.weather.gov/cap/ks.php?x=1";
-		String kentucky = "http://alerts.weather.gov/cap/ky.php?x=1";
-		String louisiana = "http://alerts.weather.gov/cap/la.php?x=1";
-		String maine = "http://alerts.weather.gov/cap/me.php?x=1";
-		String maryland = "http://alerts.weather.gov/cap/md.php?x=1";
-		String massachusetts = "http://alerts.weather.gov/cap/ma.php?x=1";
-		String michigan = "http://alerts.weather.gov/cap/mi.php?x=1";
-		String minnesota = "http://alerts.weather.gov/cap/mn.php?x=1";
-		String mississippi = "http://alerts.weather.gov/cap/ms.php?x=1";
-		String missouri = "http://alerts.weather.gov/cap/mo.php?x=1";
-		String montana = "http://alerts.weather.gov/cap/mt.php?x=1";
-		String nevada = "http://alerts.weather.gov/cap/nv.php?x=1";
-		String nebraska = "http://alerts.weather.gov/cap/ne.php?x=1";
-		String newHampshire = "http://alerts.weather.gov/cap/nh.php?x=1";
-		String newJersey = "http://alerts.weather.gov/cap/nj.php?x=1";
-		String newMexico = "http://alerts.weather.gov/cap/nm.php?x=1";
-		String newYork = "http://alerts.weather.gov/cap/ny.php?x=1";
-		String northCarolina = "http://alerts.weather.gov/cap/nc.php?x=1";
-		String northDakota = "http://alerts.weather.gov/cap/nd.php?x=1";
-		String ohio = "http://alerts.weather.gov/cap/oh.php?x=1";
-		String oklahoma = "http://alerts.weather.gov/cap/ok.php?x=1";
-		String oregon = "http://alerts.weather.gov/cap/or.php?x=1";
-		String pennsylvania = "http://alerts.weather.gov/cap/pa.php?x=1";
-		String rhodeIsland = "http://alerts.weather.gov/cap/ri.php?x=1";
-		String southCarolina = "http://alerts.weather.gov/cap/sc.php?x=1";
-		String southDakota = "http://alerts.weather.gov/cap/sd.php?x=1";
-		String tennessee = "http://alerts.weather.gov/cap/tn.php?x=1";
-		String texas = "http://alerts.weather.gov/cap/tx.php?x=1";
-		String utah = "http://alerts.weather.gov/cap/ut.php?x=1";
-		String vermont = "http://alerts.weather.gov/cap/vt.php?x=1";
-		String virginia = "http://alerts.weather.gov/cap/va.php?x=1";
-		String washington = "http://alerts.weather.gov/cap/wa.php?x=1";
-		String westVirginia = "http://alerts.weather.gov/cap/wv.php?x=1";
-		String wisconsin = "http://alerts.weather.gov/cap/wi.php?x=1";
-		String wyoming = "http://alerts.weather.gov/cap/wy.php?x=1";
-		
-		/*List<String> urls = new ArrayList<String>(50);
-		
-		urls.add(alabama);
-		urls.add(alaska);
-		urls.add(arizona);
-		urls.add(arkansas);
-		urls.add(california);
-		urls.add(colorado);
-		urls.add(connecticut);
-		urls.add(delaware);
-		urls.add(florida);
-		urls.add(georgia);
-		urls.add(hawaii);
-		urls.add(idaho);
-		urls.add(illinois);
-		urls.add(indiana);
-		urls.add(iowa);
-		urls.add(kansas);
-		urls.add(kentucky);
-		urls.add(louisiana);
-		urls.add(maine);
-		urls.add(maryland);
-		urls.add(massachusetts);
-		urls.add(michigan);
-		urls.add(minnesota);
-		urls.add(mississippi);
-		urls.add(missouri);
-		urls.add(montana);
-		urls.add(nevada);
-		urls.add(nebraska);
-		urls.add(newHampshire);
-		urls.add(newJersey);
-		urls.add(newMexico);
-		urls.add(newYork);
-		urls.add(northCarolina);
-		urls.add(northDakota);
-		urls.add(ohio);
-		urls.add(oklahoma);
-		urls.add(oregon);
-		urls.add(pennsylvania);
-		urls.add(rhodeIsland);
-		urls.add(southCarolina);
-		urls.add(southDakota);
-		urls.add(tennessee);
-		urls.add(texas);
-		urls.add(utah);
-		urls.add(vermont);
-		urls.add(virginia);
-		urls.add(washington);
-		urls.add(westVirginia);
-		urls.add(wisconsin);
-		urls.add(wyoming);
-		*/
-		
-		if(inputURL=="alabama"||inputURL=="Alabama")
-		{
-			return alabama;
-		}
-		if(inputURL=="alaska"||inputURL=="Alaska")
-		{
-			return alaska;
-		}
-		if(inputURL=="arizona"||inputURL=="Arizona")
-		{
-			return arizona;
-		}
-		if(inputURL=="arkansas"||inputURL=="Arkansas")
-		{
-			return arkansas;
-		}
-		if(inputURL=="california"||inputURL=="California")
-		{
-			return california;
-		}
-		if(inputURL=="colorado"||inputURL=="Colorado")
-		{
-			return colorado;
-		}
-		if(inputURL=="connecticut"||inputURL=="Connecticut")
-		{
-			return connecticut;
-		}
-		if(inputURL=="delaware"||inputURL=="Delaware")
-		{
-			return delaware;
-		}
-		if(inputURL=="florida"||inputURL=="Florida")
-		{
-			return florida;
-		}
-		if(inputURL=="georgia"||inputURL=="Georgia")
-		{
-			return georgia;
-		}
-		if(inputURL=="hawaii"||inputURL=="Hawaii")
-		{
-			return hawaii;
-		}
-		if(inputURL=="idaho"||inputURL=="Idaho")
-		{
-			return arkansas;
-		}
-		if(inputURL=="illinois"||inputURL=="Illinois")
-		{
-			return illinois;
-		}
-		if(inputURL=="indiana"||inputURL=="Indiana")
-		{
-			return indiana;
-		}
-		if(inputURL=="iowa"||inputURL=="Iowa")
-		{
-			return iowa;
-		}
-		if(inputURL=="kansas"||inputURL=="Kansas")
-		{
-			return kansas;
-		}
-		if(inputURL=="kentucky"||inputURL=="Kentucky")
-		{
-			return kentucky;
-		}
-		if(inputURL=="louisiana"||inputURL=="Louisiana")
-		{
-			return louisiana;
-		}
-		if(inputURL=="maine"||inputURL=="Maine")
-		{
-			return maine;
-		}
-		if(inputURL=="maryland"||inputURL=="Maryland")
-		{
-			return maryland;
-		}
-		if(inputURL=="massachusetts"||inputURL=="Massachusetts")
-		{
-			return massachusetts;
-		}
-		if(inputURL=="michigan"||inputURL=="Michigan")
-		{
-			return michigan;
-		}
-		if(inputURL=="minnesota"||inputURL=="Minnesota")
-		{
-			return minnesota;
-		}
-		if(inputURL=="mississippi"||inputURL=="Mississippi")
-		{
-			return mississippi;
-		}
-		if(inputURL=="missouri"||inputURL=="Missouri")
-		{
-			return missouri;
-		}
-		if(inputURL=="montana"||inputURL=="Montana")
-		{
-			return montana;
-		}
-		if(inputURL=="nevada"||inputURL=="Nevada")
-		{
-			return nevada;
-		}
-		if(inputURL=="nebraska"||inputURL=="Nebraska")
-		{
-			return nebraska;
-		}
-		if(inputURL=="new hampshire"||inputURL=="New Hampshire")
-		{
-			return newHampshire;
-		}
-		if(inputURL=="new jersey"||inputURL=="New Jersey")
-		{
-			return newJersey;
-		}
-		if(inputURL=="new mexico"||inputURL=="New Mexico")
-		{
-			return newMexico;
-		}
-		if(inputURL=="new york"||inputURL=="New York")
-		{
-			return newYork;
-		}
-		if(inputURL=="north carolina"||inputURL=="North Carolina")
-		{
-			return northCarolina;
-		}
-		if(inputURL=="north dakota"||inputURL=="North Dakota")
-		{
-			return northDakota;
-		}
-		if(inputURL=="ohio"||inputURL=="Ohio")
-		{
-			return ohio;
-		}
-		if(inputURL=="oklahoma"||inputURL=="Oklahoma")
-		{
-			return oklahoma;
-		}
-		if(inputURL=="oregon"||inputURL=="Oregon")
-		{
-			return oregon;
-		}
-		if(inputURL=="pennsylvania"||inputURL=="Pennsylvania")
-		{
-			return pennsylvania;
-		}
-		if(inputURL=="rhode island"||inputURL=="Rhode Island")
-		{
-			return rhodeIsland;
-		}
-		if(inputURL=="south carolina"||inputURL=="South Carolina")
-		{
-			return southCarolina;
-		}
-		if(inputURL=="south dakota"||inputURL=="South Dakota")
-		{
-			return southDakota;
-		}
-		if(inputURL=="tennessee"||inputURL=="Tennessee")
-		{
-			return tennessee;
-		}
-		if(inputURL=="texas"||inputURL=="Texas")
-		{
-			return texas;
-		}
-		if(inputURL=="utah"||inputURL=="Utah")
-		{
-			return utah;
-		}
-		if(inputURL=="vermont"||inputURL=="Vermont")
-		{
-			return vermont;
-		}
-		if(inputURL=="virginia"||inputURL=="Virginia")
-		{
-			return virginia;
-		}
-		if(inputURL=="washington"||inputURL=="Washington")
-		{
-			return washington;
-		}
-		if(inputURL=="west virginia"||inputURL=="West Virginia")
-		{
-			return westVirginia;
-		}
-		if(inputURL=="wisconsin"||inputURL=="Wisconsin")
-		{
-			return wisconsin;
-		}
-		if(inputURL=="wyoming"||inputURL=="Wyoming")
-		{
-			return wyoming;
-		}
-		else
-			return error;
+		return urls;
 	}
 }

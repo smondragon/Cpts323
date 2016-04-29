@@ -16,6 +16,9 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import gov.nasa.worldwindx.examples.ApplicationTemplate;
+import groupProject.Balloons.AppFrame;
+
 // Last updated 4/26/2016ish
 
 public class ParseXMLFile
@@ -27,7 +30,7 @@ public class ParseXMLFile
 // Do I need a colon after the "private"?	
 
 	
-	List<Alert> parseXML(String url){
+	static List<Alert> parseXML(String url){
 		List<Alert> alerts = new ArrayList<Alert>();
         String url2 = "http://alerts.weather.gov/cap/il.php?x=1";   
         try
@@ -41,8 +44,8 @@ public class ParseXMLFile
             Document doc = b.parse(url);
  
             doc.getDocumentElement().normalize();
-            System.out.println ("Root element: " + 
-                        doc.getDocumentElement().getNodeName());
+            //System.out.println ("Root element: " + 
+                       // doc.getDocumentElement().getNodeName());
        
             // loop through each item
             NodeList items = doc.getElementsByTagName("entry");
@@ -65,7 +68,7 @@ public class ParseXMLFile
 
                 
                 // makes alert's type the title
-                Alert.setType(titleNode.getNodeValue());
+                alert.setType(titleNode.getNodeValue());
                 
                 // get and print the latitude/longitude values
                 NodeList polygonList = 
@@ -74,7 +77,7 @@ public class ParseXMLFile
                 
              
                 // makes alert's polygon region this
-                Alert.setPolygon(polygonElem.getChildNodes().item(0).getNodeValue());
+                alert.setPolygon(polygonElem.getChildNodes().item(0).getNodeValue());
                 
                 // get and print the severity
                 
@@ -82,29 +85,32 @@ public class ParseXMLFile
                 		e.getElementsByTagName("cap:severity");
                 Element severityElem = (Element) severityList.item(0);
                 
-                //makes alert's severity this severity
-                Alert.setSeverity(severityElem.getChildNodes().item(0).getNodeValue());
+  
+                alert.setSeverity(severityElem.getChildNodes().item(0).getNodeValue());
                 
                 NodeList effectiveList = 
                 		e.getElementsByTagName("cap:effective");
                 Element effectiveElem = (Element) effectiveList.item(0);
                 
-                //makes alert's severity this severity
-                Alert.setEffective(effectiveElem.getChildNodes().item(0).getNodeValue());
+
+                alert.setEffective(effectiveElem.getChildNodes().item(0).getNodeValue());
                 
                 NodeList expiresList = 
                 		e.getElementsByTagName("cap:expires");
                 Element expiresElem = (Element) expiresList.item(0);
                 
-                //makes alert's severity this severity
-                Alert.setExpires(expiresElem.getChildNodes().item(0).getNodeValue());
+
+                alert.setExpires(expiresElem.getChildNodes().item(0).getNodeValue());
                 
                 
-                NodeList descList = 
-                		e.getElementsByTagName("cap:description");
-                Element descElem = (Element) descList.item(0);
+                NodeList sumList = 
+                		e.getElementsByTagName("summary");
+                Element sumElem = (Element) sumList.item(0);
                 
-                System.out.println(descElem.getChildNodes().item(0).getNodeValue());
+                alert.setSummary(sumElem.getChildNodes().item(0).getNodeValue());
+                
+                // something wrong with the below?
+                //System.out.println(descElem.getChildNodes().item(0).getNodeValue());
                
                 /*
                 // get and print the urgency
@@ -115,14 +121,15 @@ public class ParseXMLFile
                 
                 System.out.println(urgencyElem.getChildNodes().item(0).getNodeValue());
                 */
-                
+                /*
                 System.out.println("THISISANALERT");
-                System.out.println(Alert.getType());
-                System.out.println(Alert.getPolygon());
-                System.out.println(Alert.getSeverity());
-                System.out.println("effective" + Alert.getEffective());
-                System.out.println("expires" + Alert.getExpires());
-                
+                System.out.println("type - " + alert.getType());
+                System.out.println("polygons - " + alert.getPolygon());
+                System.out.println("severity - " + alert.getSeverity());
+                System.out.println("effective - " + alert.getEffective());
+                System.out.println("expires - " + alert.getExpires());
+                System.out.println("summary - " + alert.getSummary());
+                */
                 alerts.add(alert);
             }
          
@@ -133,5 +140,5 @@ public class ParseXMLFile
         }
         return alerts;
     }
-	
+
 }

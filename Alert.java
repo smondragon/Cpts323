@@ -3,49 +3,57 @@ package groupProject;
 // Last updated 4/28/2016 - 12:03 a.m.
 
 public class Alert {
-
-	private static String type;
-	private static String severity;
-	private static String polygon;	
-	private static String effective;
-	private static String expires;
-	private static String description;
 	
-	public static String getType() {
+	private String type;
+	private String severity;
+	private String polygon;	
+	private String effective;
+	private String expires;
+	private String description;
+	private String summary;
+	
+	public String getType() {
 		return type;
 	}
-	public static void setType(String type) {
-		Alert.type = type;
+	public void setType(String inputType) {
+		type = inputType;
 	}
-	public static String getPolygon() {
+	public String getPolygon() {
 		return polygon;
 	}
-	public static void setPolygon(String polygon) {
-		Alert.polygon = polygon;
+	public void setPolygon(String inputPolygon) {
+		polygon = inputPolygon;
 	}
-	public static String getSeverity() {
+	public String getSeverity() {
 		return severity;
 	}
-	public static void setSeverity(String severity) {
-		Alert.severity = severity;
+	public void setSeverity(String inputSeverity) {
+		severity = inputSeverity;
 	}
-	public static String getEffective() {
+	public String getEffective() {
 		return effective;
 	}
-	public static void setEffective(String effective) {
-		Alert.effective = effective;
+	public void setEffective(String inputEffective) {
+		effective = inputEffective;
 	}
-	public static String getExpires() {
+	public String getExpires() {
 		return expires;
 	}
-	public static void setExpires(String expires) {
-		Alert.expires = expires;
+	public void setExpires(String inputExpires) {
+		expires = inputExpires;
 	}
-	public static String getDescription() {
+	public String getDescription() {
 		return description;
 	}
-	public static void setDescription(String description) {
-		Alert.description = description;
+	public void setDescription(String inputDescription) {
+		description = inputDescription;
+	}
+	
+	public String getSummary() {
+		return summary;
+	}
+	public void setSummary(String inputSummary) {
+		summary = inputSummary;
 	}
 
 	

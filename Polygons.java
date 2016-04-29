@@ -51,6 +51,8 @@ public class Polygons extends ApplicationTemplate
             // Create a polygon, set some of its properties and set its attributes.
             ArrayList<Position> pathPositions = new ArrayList<Position>();
             
+            
+            
             pathPositions.add(Position.fromDegrees(38.56, -87.23, 1000));
             pathPositions.add(Position.fromDegrees(38.53, -87.29, 1000));
             pathPositions.add(Position.fromDegrees(38.55, -87.36, 1000));

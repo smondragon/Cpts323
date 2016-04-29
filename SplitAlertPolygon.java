@@ -6,10 +6,10 @@ public class SplitAlertPolygon {
 		
 	Alert alert = new Alert();
 	
-	Alert.setPolygon("38.56,-87.23 38.53,-87.29 38.55,-87.36 38.54,-87.44 38.51,-87.44 38.5,-87.29 38.52,-87.22 38.56,-87.23");
+	alert.setPolygon("38.56,-87.23 38.53,-87.29 38.55,-87.36 38.54,-87.44 38.51,-87.44 38.5,-87.29 38.52,-87.22 38.56,-87.23");
 	
 	//for()
-	String parts[] = Alert.getPolygon().split(" ");
+	String parts[] = alert.getPolygon().split(" ");
 	String part1 = parts[0];
 	String part2 = parts[1];
 	String part3 = parts[2];
