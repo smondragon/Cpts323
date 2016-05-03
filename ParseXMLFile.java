@@ -26,9 +26,6 @@ public class ParseXMLFile
 	// Following code mostly from http://theoryapp.com/parse-xml-using-dom-in-java/
    /* public static void main(String[] args)
     {*/
-
-// Do I need a colon after the "private"?	
-
 	
 	static List<Alert> parseXML(String url){
 		List<Alert> alerts = new ArrayList<Alert>();
@@ -121,7 +118,7 @@ public class ParseXMLFile
                 
                 System.out.println(urgencyElem.getChildNodes().item(0).getNodeValue());
                 */
-                /*
+                
                 System.out.println("THISISANALERT");
                 System.out.println("type - " + alert.getType());
                 System.out.println("polygons - " + alert.getPolygon());
@@ -129,7 +126,7 @@ public class ParseXMLFile
                 System.out.println("effective - " + alert.getEffective());
                 System.out.println("expires - " + alert.getExpires());
                 System.out.println("summary - " + alert.getSummary());
-                */
+                
                 alerts.add(alert);
             }
          

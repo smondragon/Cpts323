@@ -9,11 +9,16 @@ import groupProject.Balloons.AppFrame;
 
 public class testing {
 
+	// THIS WORKS FOR SPLITTING 
 	public static void main(String[] args) {
+		SplitAlertPolygon split = new SplitAlertPolygon();
+		Alert alert = new Alert();
+		// Below is dummy data.
+		alert.setPolygon("38.5,-87.223");
+		split.getPoints(alert.getPolygon(), alert);
 		
-		List<Alert> alerts = new ArrayList<Alert>();
-		
-		alerts = ParseXMLFile.parseXML("http://alerts.weather.gov/cap/il.php?x=1");
+		System.out.println(alert.getPoint1());
+		System.out.println(alert.getPoint2());
 			
 		
 		

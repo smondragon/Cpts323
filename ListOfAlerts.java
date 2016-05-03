@@ -5,7 +5,15 @@ import java.util.List;
 
 public class ListOfAlerts {
 
-	List<Alert> alerts = new ArrayList<Alert>();
+private List<Alert> alerts = new ArrayList<Alert>();
+
+public List<Alert> getAlerts() {
+	return alerts;
+}
+
+public void setAlerts(List<Alert> alerts) {
+	this.alerts = alerts;
+}
 	
 	
 }

@@ -11,6 +11,8 @@ public class Alert {
 	private String expires;
 	private String description;
 	private String summary;
+	private double point1;
+	private double point2;
 	
 	public String getType() {
 		return type;
@@ -54,6 +56,18 @@ public class Alert {
 	}
 	public void setSummary(String inputSummary) {
 		summary = inputSummary;
+	}
+	public double getPoint1() {
+		return point1;
+	}
+	public void setPoint1(double point1) {
+		this.point1 = point1;
+	}
+	public double getPoint2() {
+		return point2;
+	}
+	public void setPoint2(double point2) {
+		this.point2 = point2;
 	}
 
 	

@@ -67,8 +67,15 @@ public class Balloons extends ApplicationTemplate
             this.getLayerPanel().update(this.getWwd());
 
             // Add an AnnotationBalloon and a BrowserBalloon to the balloon layer.
-            this.makeAnnotationBalloon();
-            this.makeBrowserBalloon();
+           
+            // Below is dummy data. Needs to get data from an actual alert.
+            Alert alert = new Alert();
+            alert.setPoint1(38.5);
+            alert.setPoint2(-87.223);
+            
+            // The main issue here is going through the list of alerts and creating multiple balloons.
+            // I dunno how to do that.
+            this.makeBrowserBalloon(alert);
 
             // Size the World Window to provide enough screen space for the BrowserBalloon, and center the World Window
             // on the screen.
@@ -77,30 +84,8 @@ public class Balloons extends ApplicationTemplate
             this.pack();
             WWUtil.alignComponent(null, this, AVKey.CENTER);
         }
-
-        protected void makeAnnotationBalloon()
-        {
-            Balloon balloon = new ScreenAnnotationBalloon("<b>Dummy Data Region here</b>",
-                new Point(50, 200));
-
-            BalloonAttributes attrs = new BasicBalloonAttributes();
-            // Size the balloon to fit its text, place its lower-left corner at the point, put event padding between the
-            // balloon's text and its sides, and disable the balloon's leader.
-            attrs.setSize(Size.fromPixels(300, 50));
-            attrs.setOffset(new Offset(0d, 0d, AVKey.PIXELS, AVKey.PIXELS));
-            attrs.setInsets(new Insets(10, 10, 10, 10)); // .
-            attrs.setLeaderShape(AVKey.SHAPE_NONE);
-            // Configure the balloon's colors to display white text over a semi-transparent black background.
-            attrs.setTextColor(Color.WHITE);
-            attrs.setInteriorMaterial(Material.BLACK);
-            attrs.setInteriorOpacity(0.6);
-            attrs.setOutlineMaterial(Material.WHITE);
-            balloon.setAttributes(attrs);
-
-            this.layer.addRenderable(balloon);
-        }
-
-        protected void makeBrowserBalloon()
+        
+        protected void makeBrowserBalloon(Alert alert)
         {
             String htmlString = null;
             InputStream contentStream = null;
@@ -123,7 +108,9 @@ public class Balloons extends ApplicationTemplate
             if (htmlString == null)
                 htmlString = Logging.getMessage("generic.ExceptionAttemptingToReadFile", BROWSER_BALLOON_CONTENT_PATH);
 
-            Position balloonPosition = Position.fromDegrees(38.883056, -77.016389);
+            
+            
+            Position balloonPosition = Position.fromDegrees(alert.getPoint1(), alert.getPoint2());
 
             // Create a Browser Balloon attached to the globe, and pointing at the NASA headquarters in Washington, D.C.
             // We use the balloon page's URL as its resource resolver to handle relative paths in the page content.
@@ -154,6 +141,10 @@ public class Balloons extends ApplicationTemplate
         Configuration.setValue(AVKey.INITIAL_PITCH, 45);
 
         ApplicationTemplate.start("World Wind Balloons", AppFrame.class);
+        
+        
+        
+        
     }
 }
 
