@@ -68,6 +68,8 @@ public class Balloons extends ApplicationTemplate
 
             // Add an AnnotationBalloon and a BrowserBalloon to the balloon layer.
            
+  // ------------------------------------------     BELOW THIS ---------------------------------------
+            
             // Below is dummy data. Needs to get data from an actual alert.
             Alert alert = new Alert();
             alert.setPoint1(38.5);
@@ -77,6 +79,10 @@ public class Balloons extends ApplicationTemplate
             // I dunno how to do that.
             this.makeBrowserBalloon(alert);
 
+            
+  // ---------------------------------------------	ABOVE THIS ----------------------------------------
+            
+            
             // Size the World Window to provide enough screen space for the BrowserBalloon, and center the World Window
             // on the screen.
             Dimension size = new Dimension(1200, 800);
